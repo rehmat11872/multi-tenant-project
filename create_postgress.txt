@@ -1,0 +1,7 @@
+brew update
+brew install postgresql
+brew services start postgresql
+psql postgres
+CREATE USER tenant_user WITH PASSWORD 'my_tenent';
+CREATE DATABASE mydb OWNER tenant_user;
+GRANT ALL PRIVILEGES ON DATABASE mydb TO tenant_user;
